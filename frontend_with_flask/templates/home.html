@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        :root {
+            --ink: #17231f;
+            --muted: #65736d;
+            --paper: #f5f2ea;
+            --nav: #17231f;
+            --nav-hover: #d8663d;
+            --line: rgba(255, 255, 255, 0.14);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            margin: 0;
+            padding: clamp(18px, 4vw, 56px);
+            color: var(--ink);
+            background:
+                radial-gradient(circle at 90% 5%, rgba(216, 102, 61, 0.16), transparent 25%),
+                linear-gradient(135deg, var(--paper) 0%, #e6eee5 100%);
+            font-family: Georgia, 'Times New Roman', serif;
+        }
+
+        .my-gif {
+            display: block;
+            width: min(100%, 1512px);
+            height: clamp(150px, 22vw, 280px);
+            margin: 0 auto;
+            border-radius: 18px;
+            object-fit: cover;
+            box-shadow: 0 20px 48px rgba(47, 57, 49, 0.18);
+        }
+
+        .scrollmenu {
+            display: flex;
+            gap: 4px;
+            max-width: 1512px;
+            margin: 20px auto 0;
+            padding: 8px;
+            overflow-x: auto;
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            background: var(--nav);
+            box-shadow: 0 12px 30px rgba(47, 57, 49, 0.16);
+            scrollbar-color: var(--nav-hover) transparent;
+        }
+
+        .scrollmenu a {
+            flex: 0 0 auto;
+            padding: 13px 16px;
+            border-radius: 7px;
+            color: #f8f4eb;
+            text-decoration: none;
+            transition: color 160ms ease, background 160ms ease, transform 160ms ease;
+        }
+
+        .scrollmenu a:hover,
+        .scrollmenu a:focus-visible {
+            color: #fffaf3;
+            background: var(--nav-hover);
+            outline: none;
+            transform: translateY(-1px);
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 14px;
+            }
+
+            .my-gif {
+                height: 180px;
+                border-radius: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <img src="motion-chris-phillips-feature.gif" alt="My GIF"  class="my-gif">
+    <div class="scrollmenu">
+        <a href="home.html">Home</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="{{ url_for('list') }}">To do list</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="Search.html">Search</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="API.html">API</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="Canvas.html">Canvas</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="Upload.html">Upload</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="/drop_out_prediction">drop_out_prediction</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a>-</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a>-</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a>-</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a>-</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a>-</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a>-</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a>-</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a>-</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a>-</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a>-</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a>-</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a>-</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a>-</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a>-</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a>-</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a>-</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a>-</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a>-</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a>-</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a>-</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a>-</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a>-</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a>-</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a>-</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a>-</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a>-</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a>-</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a>-</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a>-</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    </div>
+</body>
+</html>

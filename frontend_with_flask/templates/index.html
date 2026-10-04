@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <style>
+            body {
+                margin: 0;
+                min-height: 100vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: linear-gradient(135deg, #f6f8ff, #e8f0ff);
+                font-family: Arial, sans-serif;
+            }
+
+            .button-container {
+                display: flex;
+                gap: 16px;
+                padding: 24px 32px;
+                background: rgba(255, 255, 255, 0.8);
+                border-radius: 16px;
+                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            }
+
+            .action-button {
+                border: none;
+                border-radius: 10px;
+                padding: 12px 24px;
+                font-size: 16px;
+                font-weight: 600;
+                cursor: pointer;
+                transition: transform 0.2s ease, box-shadow 0.2s ease;
+            }
+
+            .action-button:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+            }
+
+            .signup-btn {
+                background: #4f46e5;
+                color: white;
+            }
+
+            .login-btn {
+                background: #e0e7ff;
+                color: #1f2937;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="button-container">
+            <a href="/signup">
+                <button class="action-button signup-btn" name="signup">signup</button>
+            </a>
+            <a href="/login">
+                <button class="action-button login-btn" name="login">login</button>
+            </a>
+        </div>
+    </body>
+</html>

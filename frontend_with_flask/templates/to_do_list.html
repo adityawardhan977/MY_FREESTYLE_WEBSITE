@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        :root {
+            --ink: #17231f;
+            --paper: #f5f2ea;
+            --panel: #fffdf8;
+            --accent: #d8663d;
+            --accent-dark: #a9472a;
+            --line: #d9ddd4;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            margin: 0;
+            display: grid;
+            align-content: center;
+            justify-items: center;
+            padding: 24px;
+            color: var(--ink);
+            background:
+                radial-gradient(circle at 86% 10%, rgba(216, 102, 61, 0.16), transparent 26%),
+                linear-gradient(135deg, var(--paper) 0%, #e6eee5 100%);
+            font-family: Georgia, 'Times New Roman', serif;
+        }
+
+        form {
+            display: flex;
+            width: min(100%, 640px);
+            gap: 10px;
+            padding: 30px 30px 0;
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            border-radius: 18px 18px 0 0;
+            background: rgba(255, 253, 248, 0.94);
+            box-shadow: 0 12px 30px rgba(47, 57, 49, 0.12);
+        }
+
+        input {
+            min-width: 0;
+            flex: 1;
+            padding: 14px 15px;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            outline: none;
+            color: var(--ink);
+            background: var(--panel);
+            font: inherit;
+            font-size: 1rem;
+        }
+
+        input:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 4px rgba(216, 102, 61, 0.14);
+        }
+
+        button {
+            flex: 0 0 auto;
+            padding: 14px 20px;
+            border: 0;
+            border-radius: 8px;
+            color: #fffaf3;
+            background: var(--accent);
+            cursor: pointer;
+            font: inherit;
+            font-weight: bold;
+            transition: background 160ms ease, transform 160ms ease;
+        }
+
+        button:hover {
+            background: var(--accent-dark);
+            transform: translateY(-2px);
+        }
+
+        ul {
+            width: min(100%, 640px);
+            margin: 0;
+            padding: 0 30px 30px;
+            list-style: none;
+            border-radius: 0 0 18px 18px;
+            background: rgba(255, 253, 248, 0.94);
+            box-shadow: 0 24px 60px rgba(47, 57, 49, 0.14);
+        }
+
+        li {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 18px;
+            padding: 15px 16px;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: var(--panel);
+            overflow-wrap: anywhere;
+        }
+
+        li + li {
+            margin-top: 10px;
+        }
+
+        li a {
+            flex: 0 0 auto;
+            color: var(--accent-dark);
+            font-size: 0.78rem;
+            font-weight: bold;
+            letter-spacing: 0.04em;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        li a:hover {
+            color: var(--ink);
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 14px;
+            }
+
+            form {
+                flex-direction: column;
+                padding: 22px 22px 0;
+            }
+
+            button {
+                width: 100%;
+            }
+
+            ul {
+                padding: 0 22px 22px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <form method="POST">
+        <input type="text" name="to_do_list" placeholder="Enter tasks"></input>
+        <button type="submit">Add task</button>
+        <br>
+    </form>
+    <ul>
+        {% for task in tasks %}
+        <li>
+            {{task}}
+            <a href="/delete/{{loop.index0}}">DELETE</a>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

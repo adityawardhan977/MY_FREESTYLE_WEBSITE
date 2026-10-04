@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Create your account</title>
+        <style>
+            :root {
+                --ink: #17231f;
+                --muted: #65736d;
+                --paper: #f5f2ea;
+                --panel: #fffdf8;
+                --accent: #d8663d;
+                --accent-dark: #a9472a;
+                --line: #d9ddd4;
+                --shadow: 0 24px 60px rgba(47, 57, 49, 0.14);
+            }
+
+            * {
+                box-sizing: border-box;
+            }
+
+            body {
+                min-height: 100vh;
+                margin: 0;
+                display: grid;
+                place-items: center;
+                padding: 24px;
+                color: var(--ink);
+                background:
+                    radial-gradient(circle at 12% 15%, rgba(216, 102, 61, 0.15), transparent 28%),
+                    linear-gradient(135deg, #f5f2ea 0%, #e6eee5 100%);
+                font-family: Georgia, 'Times New Roman', serif;
+            }
+
+            form {
+                width: min(100%, 440px);
+                padding: clamp(30px, 7vw, 52px);
+                border: 1px solid rgba(255, 255, 255, 0.8);
+                border-radius: 18px;
+                background: rgba(255, 253, 248, 0.94);
+                box-shadow: var(--shadow);
+            }
+
+            h1 {
+                margin: 0 0 10px;
+                font-size: clamp(2rem, 5vw, 2.75rem);
+                line-height: 1.05;
+                letter-spacing: -0.03em;
+            }
+
+            h1::after {
+                content: '';
+                display: block;
+                width: 48px;
+                height: 4px;
+                margin-top: 18px;
+                border-radius: 2px;
+                background: var(--accent);
+            }
+
+            label {
+                display: block;
+                margin: 26px 0 8px;
+                color: var(--muted);
+                font-size: 0.92rem;
+                font-weight: bold;
+                letter-spacing: 0.04em;
+                text-transform: uppercase;
+            }
+
+            input {
+                width: 100%;
+                padding: 14px 15px;
+                border: 1px solid var(--line);
+                border-radius: 8px;
+                outline: none;
+                color: var(--ink);
+                background: var(--panel);
+                font: inherit;
+                font-size: 1rem;
+                transition: border-color 160ms ease, box-shadow 160ms ease;
+            }
+
+            input:focus {
+                border-color: var(--accent);
+                box-shadow: 0 0 0 4px rgba(216, 102, 61, 0.14);
+            }
+
+            button {
+                width: 100%;
+                margin-top: 32px;
+                padding: 15px 20px;
+                border: 0;
+                border-radius: 8px;
+                color: #fffaf3;
+                background: var(--accent);
+                cursor: pointer;
+                font: inherit;
+                font-size: 1.05rem;
+                font-weight: bold;
+                transition: background 160ms ease, transform 160ms ease;
+            }
+
+            button:hover {
+                background: var(--accent-dark);
+                transform: translateY(-2px);
+            }
+
+            button:focus-visible {
+                outline: 3px solid rgba(216, 102, 61, 0.35);
+                outline-offset: 3px;
+            }
+
+            @media (max-width: 420px) {
+                body {
+                    padding: 14px;
+                }
+
+                form {
+                    padding: 30px 22px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <form method="POST">
+            <h1>Ensure your authentication</h1>
+            <label for="username">Enter your username</label>
+            <input id="username" type="text" name="username">
+            <label for="password">Enter your password</label>
+            <input id="password" type="password" name="password">
+            <button type="submit">Signup</button>
+        </form>
+    </body>
+</html>
